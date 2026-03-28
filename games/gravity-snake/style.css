@@ -1,0 +1,15 @@
+/* games/gravity-snake/style.css */
+.game-page { background: #0A0A0A; }
+
+#game-canvas {
+  background: #0A0A0A;
+  border: 1px solid #1E1E1E;
+}
+
+.hud-bar {
+  display: flex;
+  gap: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: #888;
+}

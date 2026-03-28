@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logic Circuit — PIXELRIFT</title>
+  <meta name="description" content="Build working logic gate circuits in your browser. Drag AND, OR, NOT gates and wire them together. Real-time boolean propagation in vanilla JavaScript." />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/games/logic-gates/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Logic Circuit","url":"https://rizvee.github.io/PIXELRIFT/games/logic-gates/","description":"Drag-and-drop boolean logic gate puzzle with real-time propagation.","author":{"@type":"Person","name":"Hasan Rizvee","url":"https://github.com/rizvee"},"genre":["Puzzle","Educational"],"playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="game-page">
+  <div class="game-wrapper">
+    <header class="game-header">
+      <a href="../../" class="back-btn">← PIXELRIFT</a>
+      <span class="game-header-title mono">Logic Circuit</span>
+      <div class="game-header-meta">
+        <span style="font-size:11px;color:var(--muted)">Click palette → place gate → wire inputs to outputs</span>
+        <span style="color:var(--muted2)">|</span>
+        <button class="btn-sm" id="btn-clear-circuit">Clear</button>
+      </div>
+    </header>
+    <div class="canvas-wrap"><canvas id="game-canvas"></canvas></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

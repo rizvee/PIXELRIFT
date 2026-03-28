@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light Bend — PIXELRIFT</title>
+  <meta name="description" content="Play Light Bend free in your browser. A vanilla JavaScript puzzle game using raycasting to reflect light off user-placed mirrors and hit targets. Pure geometric logic." />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/games/light-bend/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Light Bend","url":"https://rizvee.github.io/PIXELRIFT/games/light-bend/","description":"Raycasting puzzle: reflect light off placed mirrors to hit all targets.","author":{"@type":"Person","name":"Hasan Rizvee","url":"https://github.com/rizvee"},"genre":["Puzzle"],"playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="game-page">
+  <div class="game-wrapper">
+    <header class="game-header">
+      <a href="../../" class="back-btn">← PIXELRIFT</a>
+      <span class="game-header-title mono">Light Bend</span>
+      <div class="game-header-meta">
+        <span style="font-size:11px;color:var(--muted)">Click: place mirror · R: rotate · Del: remove</span>
+        <span style="color:var(--muted2)">|</span>
+        <span>Level <span class="score-display" id="level-display">1</span></span>
+      </div>
+    </header>
+    <div class="canvas-wrap"><canvas id="game-canvas" style="cursor:crosshair"></canvas>
+      <div class="game-overlay" id="win-overlay" style="display:none">
+        <p class="overlay-title">SOLVED</p>
+        <button class="btn-primary" id="next-btn">NEXT LEVEL →</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

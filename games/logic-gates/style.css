@@ -1,0 +1,13 @@
+/* logic-gates/style.css */
+.btn-sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 120ms linear;
+}
+.btn-sm:hover { color: var(--text); border-color: var(--border-h); }

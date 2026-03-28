@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boid Herder — PIXELRIFT</title>
+  <meta name="description" content="Play Boid Herder free online. A vanilla JavaScript flocking simulation where you herd autonomous boids using separation, alignment, and cohesion rules into a target zone." />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/games/boid-herder/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Boid Herder","url":"https://rizvee.github.io/PIXELRIFT/games/boid-herder/","description":"Herd boids using flocking behavior — separation, alignment and cohesion rules.","author":{"@type":"Person","name":"Hasan Rizvee","url":"https://github.com/rizvee"},"genre":["Experimental","Simulation"],"playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+</head>
+<body class="game-page">
+  <div class="game-wrapper">
+    <header class="game-header">
+      <a href="../../" class="back-btn">? PIXELRIFT</a>
+      <span class="game-header-title mono">Boid Herder</span>
+      <div class="game-header-meta">
+        <span>IN ZONE: <span class="score-display" id="score-display">0</span></span>
+        <span style="color:var(--muted2)">|</span>
+        <span style="font-size:11px;color:var(--muted)">Move mouse to repel boids toward the target</span>
+      </div>
+    </header>
+    <div class="canvas-wrap"><canvas id="game-canvas"></canvas></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

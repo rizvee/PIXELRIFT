@@ -1,0 +1,7 @@
+/* light-bend/style.css */
+.mirror-controls {
+  display: flex; gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
