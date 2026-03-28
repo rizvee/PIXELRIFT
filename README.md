@@ -17,7 +17,14 @@
 - **Core**: Vanilla JavaScript (ES6+)
 - **Graphics**: HTML5 Canvas 2D API (Optimized)
 - **Styling**: Modern CSS (Custom Reset, Glassmorphism, CSS Variables)
-- **Architecture**: Hub & Spoke (Central catalog engine + independent game modules)
+- **Architecture**: Hub & Spoke (Central catalog engine + independent game modules powered by `PixelRiftEngine`)
+
+## 🏗 Common Engine Core (`engine.js`)
+
+To ensure a seamless experience across all hardware, the platform uses a unified engine module that abstracts:
+- **High-DPI (Retina) Scaling**: Automatically adjusts canvas resolution to the device's `devicePixelRatio` for razor-sharp visuals on modern phones and laptops.
+- **Fixed-Timestep Physics**: Decouples game logic from the monitor's refresh rate (Delta Time). Play comfortably on 60Hz, 120Hz, or 144Hz displays.
+- **Unified Persistence**: Standardized high-score management using `localStorage`.
 
 ## ⚡ Performance Optimizations
 
