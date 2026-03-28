@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --bg:       #0A0A0A;
+  --surface:  #111111;
+  --surface2: #161616;
+  --border:   #1E1E1E;
+  --border-h: #2a2a2a;
+  --accent:   #00E5FF;
+  --accent-dim: rgba(0,229,255,0.12);
+  --accent-glow: rgba(0,229,255,0.35);
+  --text:     #FFFFFF;
+  --muted:    #888888;
+  --muted2:   #555555;
+  --danger:   #FF4D4D;
+  --warn:     #FFB800;
+  --success:  #00FF88;
+
+  --radius:   6px;
+  --radius-lg: 10px;
+  --transition: 120ms linear;
+  --card-w:   280px;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* ─── Nav ────────────────────────────────────────────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 56px;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  color: var(--muted);
+  transition: color var(--transition);
+  font-family: 'JetBrains Mono', monospace;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ─── Hero ───────────────────────────────────────────────────────────── */
+.hero {
+  padding: 80px 32px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(0,229,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.hero-title .glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--text);
+}
+
+.hero-title .glitch::before,
+.hero-title .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-title .glitch::before {
+  color: var(--accent);
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  animation: glitch-top 4s infinite linear;
+  opacity: 0.5;
+}
+
+.hero-title .glitch::after {
+  color: #FF0080;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  animation: glitch-bot 4s infinite linear;
+  opacity: 0.4;
+}
+
+@keyframes glitch-top {
+  0%, 90%, 100% { transform: translateX(0); }
+  92% { transform: translateX(-3px); }
+  94% { transform: translateX(2px); }
+  96% { transform: translateX(-1px); }
+}
+@keyframes glitch-bot {
+  0%, 90%, 100% { transform: translateX(0); }
+  93% { transform: translateX(3px); }
+  95% { transform: translateX(-2px); }
+  97% { transform: translateX(1px); }
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 6px;
+}
+
+/* ─── Controls ───────────────────────────────────────────────────────── */
+.controls {
+  padding: 0 32px 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.search-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted2);
+  pointer-events: none;
+  font-size: 14px;
+}
+
+#search-input {
+  width: 100%;
+  height: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  padding: 0 16px 0 44px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+#search-input::placeholder { color: var(--muted2); }
+#search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-pill {
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  cursor: pointer;
+  background: transparent;
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+}
+
+.tag-pill:hover {
+  border-color: var(--border-h);
+  color: var(--text);
+}
+
+.tag-pill.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ─── Game Count ─────────────────────────────────────────────────────── */
+.game-count {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted2);
+}
+
+/* ─── Grid ───────────────────────────────────────────────────────────── */
+#game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-w), 1fr));
+  gap: 1px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 32px;
+  gap: 12px;
+  color: var(--muted2);
+  background: var(--bg);
+}
+.empty-state span { font-size: 32px; }
+.empty-state p { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+
+/* ─── Game Card ──────────────────────────────────────────────────────── */
+.game-card {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid transparent;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.game-card:hover {
+  background: var(--surface);
+}
+
+.game-card:hover::before {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 20px var(--accent-dim);
+}
+
+.card-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--muted2);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  transition: color var(--transition);
+}
+
+.game-card:hover .card-title { color: var(--accent); }
+
+.card-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: 0.05em;
+}
+
+.difficulty-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.diff-easy    { color: var(--success); background: rgba(0,255,136,0.08); }
+.diff-medium  { color: var(--warn);    background: rgba(255,184,0,0.08); }
+.diff-hard    { color: var(--danger);  background: rgba(255,77,77,0.08); }
+.diff-relaxing{ color: var(--accent);  background: var(--accent-dim); }
+
+.card-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  color: var(--muted2);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.game-card:hover .card-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-left {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer-left a { color: var(--accent); }
+.footer-left a:hover { text-decoration: underline; }
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: var(--text); }
+
+/* ─── Game Page Specific ─────────────────────────────────────────────── */
+.game-page body { overflow: hidden; }
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 24px;
+  height: 50px;
+  background: rgba(10,10,10,0.95);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.back-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.back-btn:hover { color: var(--accent); }
+
+.game-header-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.game-header-meta {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.score-display {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.canvas-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+#game-canvas {
+  display: block;
+  image-rendering: pixelated;
+}
+
+.canvas-wrap::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.game-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,10,10,0.88);
+  backdrop-filter: blur(4px);
+  gap: 16px;
+  z-index: 10;
+}
+
+.overlay-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.overlay-score {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.overlay-score span { color: var(--accent); }
+
+.btn-primary {
+  padding: 10px 28px;
+  border: 1px solid var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover {
+  background: rgba(0,229,255,0.25);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-h); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted2); }
+
+/* ─── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { padding: 48px 20px 40px; }
+  .hero-stats { gap: 32px; }
+  .controls, .game-count, #game-grid { padding-left: 16px; padding-right: 16px; }
+  :root { --card-w: 100%; }
+  .site-nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .site-footer { padding: 24px 16px; flex-direction: column; align-items: flex-start; }
+}

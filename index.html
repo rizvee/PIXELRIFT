@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PIXELRIFT — 50 Vanilla JS Games by Hasan Rizvee</title>
+  <meta name="description" content="PIXELRIFT is an open-source arcade portal featuring 50 browser-playable vanilla JavaScript games — physics simulations, puzzle engines, and experimental interactive art. No downloads. No frameworks. Pure web." />
+  <meta name="keywords" content="browser games, vanilla javascript games, HTML5 canvas games, free online games, physics simulation, puzzle games, arcade games" />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/" />
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(console.error);
+      });
+    }
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="PIXELRIFT — 50 Vanilla JS Games" />
+  <meta property="og:description" content="Open-source arcade portal. 50 browser-playable games built with pure HTML, CSS, and JavaScript." />
+  <meta property="og:url"         content="https://rizvee.github.io/PIXELRIFT/" />
+  <meta property="og:site_name"   content="PIXELRIFT" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="PIXELRIFT — 50 Vanilla JS Games" />
+  <meta name="twitter:description" content="Open-source arcade portal. 50 browser-playable games." />
+
+  <!-- JSON-LD: WebSite + Author -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "PIXELRIFT",
+        "url": "https://rizvee.github.io/PIXELRIFT/",
+        "description": "50 vanilla JavaScript browser games — physics, puzzles, simulations, and experimental art.",
+        "author": {
+          "@type": "Person",
+          "name": "Hasan Rizvee",
+          "url": "https://github.com/rizvee"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Hasan Rizvee",
+        "url": "https://rizvee.github.io",
+        "sameAs": ["https://github.com/rizvee"]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/global.css" />
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="/PIXELRIFT/" class="nav-logo">PIXELRIFT</a>
+    <ul class="nav-links">
+      <li><a href="https://github.com/rizvee" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://rizvee.github.io" target="_blank" rel="noopener">Portfolio</a></li>
+      <li><a href="/PIXELRIFT/sitemap.xml">Sitemap</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" role="banner">
+    <p class="hero-eyebrow">Hasan Rizvee · Open Source</p>
+    <h1 class="hero-title">
+      <span class="glitch" data-text="PIXELRIFT">PIXELRIFT</span>
+    </h1>
+    <p class="hero-sub">50 browser-playable vanilla JS games. Physics engines, puzzle solvers, cellular automata — zero frameworks, zero build steps.</p>
+    <div class="hero-stats" role="list" aria-label="Platform statistics">
+      <div class="stat" role="listitem">
+        <span class="stat-num">50</span>
+        <span class="stat-label">Games</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Frameworks</span>
+      </div>
+      <div class="stat" role="listitem">
+        <span class="stat-num">∞</span>
+        <span class="stat-label">Free</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls -->
+  <section class="controls" aria-label="Search and filter">
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search games, tags, mechanics…"
+        autocomplete="off"
+        aria-label="Search games"
+      />
+    </div>
+    <div class="tag-filters" role="group" aria-label="Filter by category">
+      <button class="tag-pill active" data-tag="All">All</button>
+      <button class="tag-pill" data-tag="Arcade">Arcade</button>
+      <button class="tag-pill" data-tag="Simulation">Simulation</button>
+      <button class="tag-pill" data-tag="Puzzle">Puzzle</button>
+      <button class="tag-pill" data-tag="Strategy">Strategy</button>
+      <button class="tag-pill" data-tag="Experimental">Experimental</button>
+    </div>
+  </section>
+
+  <!-- Count -->
+  <p class="game-count"><span id="game-count-label">50 games</span></p>
+
+  <!-- Grid -->
+  <main id="game-grid" aria-label="Game catalog"></main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      Built by <a href="https://rizvee.github.io" target="_blank" rel="noopener">Hasan Rizvee</a> ·
+      <a href="https://github.com/rizvee" target="_blank" rel="noopener">github.com/rizvee</a>
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://github.com/rizvee/PIXELRIFT" target="_blank" rel="noopener">Source</a></li>
+      <li><a href="/PIXELRIFT/sitemap.xml">Sitemap</a></li>
+      <li><a href="/PIXELRIFT/robots.txt">Robots</a></li>
+    </ul>
+  </footer>
+
+  <script src="assets/js/hub.js"></script>
+</body>
+</html>
