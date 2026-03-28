@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micro RTS — PIXELRIFT</title>
+  <meta name="description" content="Play Micro RTS free online. A vanilla JavaScript real-time strategy game using state machines for units gathering resources and launching attacks." />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/games/micro-rts/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Micro RTS",
+    "url": "https://rizvee.github.io/PIXELRIFT/games/micro-rts/",
+    "description": "Play Micro RTS free online. A vanilla JavaScript real-time strategy game using state machines for units gathering resources and launching attacks.",
+    "author": {
+      "@type": "Person",
+      "name": "Hasan Rizvee",
+      "url": "https://github.com/rizvee"
+    },
+    "genre": ["Strategy","Systems"],
+    "playMode": "SinglePlayer",
+    "applicationCategory": "Game",
+    "operatingSystem": "Web Browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+</head>
+<body class="game-page">
+  <div class="game-wrapper">
+    <header class="game-header">
+      <a href="../../" class="back-btn">? PIXELRIFT</a>
+      <span class="game-header-title mono">Micro RTS</span>
+      <div class="game-header-meta">
+        <span>SCORE: <span class="score-display" id="score-display">0</span></span>
+        <span style="color:var(--muted2)">|</span>
+        <span>BEST: <span class="score-display" id="best-display">0</span></span>
+      </div>
+    </header>
+    <div class="canvas-wrap">
+      <canvas id="game-canvas"></canvas>
+      <div class="game-overlay" id="overlay">
+        <p class="overlay-title" id="overlay-title">Micro Rts</p>
+        <p class="overlay-score" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);text-align:center;max-width:320px;margin:8px 0">
+          Play Micro RTS free online. A vanilla JavaScript real-time strategy game using state machines for units gathering resources and launching attacks.
+        </p>
+        <button class="btn-primary" id="start-btn">START GAME</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

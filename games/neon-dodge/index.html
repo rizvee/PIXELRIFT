@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neon Dodge — PIXELRIFT</title>
+  <meta name="description" content="Play Neon Dodge free online. A vanilla JavaScript bullet-hell arcade game pushing 1000+ entities at 60fps using object pooling on HTML5 canvas. Dodge everything to survive." />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/games/neon-dodge/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Neon Dodge","url":"https://rizvee.github.io/PIXELRIFT/games/neon-dodge/","description":"Bullet-hell arcade game. Dodge 1000+ bullets at 60fps using optimized canvas rendering.","author":{"@type":"Person","name":"Hasan Rizvee","url":"https://github.com/rizvee"},"genre":["Arcade","Action"],"playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+</head>
+<body class="game-page">
+  <div class="game-wrapper">
+    <header class="game-header">
+      <a href="../../" class="back-btn">? PIXELRIFT</a>
+      <span class="game-header-title mono">Neon Dodge</span>
+      <div class="game-header-meta">
+        <span>SCORE: <span class="score-display" id="score-display">0</span></span>
+        <span style="color:var(--muted2)">|</span>
+        <span>BEST: <span class="score-display" id="best-display">0</span></span>
+      </div>
+    </header>
+    <div class="canvas-wrap">
+      <canvas id="game-canvas" style="cursor:none"></canvas>
+      <div class="game-overlay" id="overlay">
+        <p class="overlay-title">NEON DODGE</p>
+        <p class="overlay-score" id="overlay-msg">Move mouse · Touch to move</p>
+        <button class="btn-primary" id="start-btn">START</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+/* sand-lab/style.css */
+.el-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 120ms linear;
+  user-select: none;
+}
+.el-btn:hover  { color: var(--text); border-color: var(--border-h); }
+.el-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+#el-water.active  { border-color: #4FC3F7; color: #4FC3F7; background: rgba(79,195,247,0.1); }
+#el-fire.active   { border-color: #FF6D00; color: #FF6D00; background: rgba(255,109,0,0.1); }
+#el-stone.active  { border-color: #888; color: #888; background: rgba(136,136,136,0.1); }
+#el-void.active   { border-color: #444; color: #aaa; background: rgba(100,100,100,0.08); }

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virus Spread — PIXELRIFT</title>
+  <meta name="description" content="Play Virus Spread free online. A vanilla JavaScript SIR epidemiological model on an interactive node graph. Click to vaccinate nodes before infection spreads too far." />
+  <link rel="canonical" href="https://rizvee.github.io/PIXELRIFT/games/virus-spread/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Virus Spread","url":"https://rizvee.github.io/PIXELRIFT/games/virus-spread/","description":"SIR epidemiological model. Vaccinate nodes to stop viral spread across the network.","author":{"@type":"Person","name":"Hasan Rizvee","url":"https://github.com/rizvee"},"genre":["Strategy","Simulation"],"playMode":"SinglePlayer","applicationCategory":"Game","operatingSystem":"Web Browser","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="game-page">
+  <div class="game-wrapper">
+    <header class="game-header">
+      <a href="../../" class="back-btn">← PIXELRIFT</a>
+      <span class="game-header-title mono">Virus Spread</span>
+      <div class="game-header-meta">
+        <span style="color:#4FC3F7;font-family:JetBrains Mono,monospace;font-size:12px">S:<span id="s-count">0</span></span>
+        <span style="color:#FF4D4D;font-family:JetBrains Mono,monospace;font-size:12px">I:<span id="i-count">0</span></span>
+        <span style="color:#00FF88;font-family:JetBrains Mono,monospace;font-size:12px">R:<span id="r-count">0</span></span>
+        <span style="color:var(--muted2)">|</span>
+        <span>Vaccines: <span class="score-display" id="vax-count">10</span></span>
+        <button class="btn-sm" id="btn-reset">Reset</button>
+      </div>
+    </header>
+    <div class="canvas-wrap"><canvas id="game-canvas" style="cursor:pointer"></canvas>
+      <div class="game-overlay" id="end-overlay" style="display:none">
+        <p class="overlay-title" id="end-title">Contained!</p>
+        <p class="overlay-score" id="end-msg"></p>
+        <button class="btn-primary" id="btn-restart">Play Again</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
